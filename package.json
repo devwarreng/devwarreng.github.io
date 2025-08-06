@@ -1,0 +1,40 @@
+{
+  "name": "devwarreng-new",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "analyze-images": "node scripts/analyze-images.js",
+    "perf:mobile": "node scripts/mobile-performance-test.js",
+    "perf:lighthouse": "lhci collect && lhci assert",
+    "perf:build-analyze": "npm run build && npx @next/bundle-analyzer",
+    "deploy:check": "node scripts/deployment-check.js",
+    "deploy:build": "npm run build && npm run lint"
+  },
+  "dependencies": {
+    "next": "15.4.5",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@lhci/cli": "^0.15.1",
+    "@next/bundle-analyzer": "^15.4.5",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.5",
+    "imagemin": "^9.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0",
+    "lighthouse": "^12.8.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
